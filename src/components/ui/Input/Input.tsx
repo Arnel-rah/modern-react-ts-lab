@@ -6,7 +6,7 @@ import {
   getBaseInputStyles
 } from "./Input.styles";
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
+interface InputProps extends React.AllHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   label: string;
   type?: "text" | "password" | "email" | "textarea";
   error?: string;
