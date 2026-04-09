@@ -1,8 +1,9 @@
 import { useState } from "react";
+import Avatar from "./components/ui/Avatar/Avatar";
 import Button from "./components/ui/Button/Button";
 import Input from "./components/ui/Input/Input";
-import Avatar from "./components/ui/Avatar/Avatar";
 import Tooltip from "./components/ui/Tooltip/Tooltip";
+import Card from "./components/ui/Card/Card";
 
 function App() {
   const [name, setName] = useState("Willys Arnel");
@@ -41,7 +42,9 @@ function App() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="votre@email.com"
-          error={email.length > 0 && !email.includes('@') ? "Email invalide" : ""}
+          error={
+            email.length > 0 && !email.includes("@") ? "Email invalide" : ""
+          }
         />
 
         <Input
@@ -53,7 +56,9 @@ function App() {
 
         <div className="flex gap-2 mt-2">
           <Tooltip content="Sauvegarder les modifications" position="bottom">
-            <Button variant="primary" className="flex-1">Enregistrer</Button>
+            <Button variant="primary" className="flex-1">
+              Enregistrer
+            </Button>
           </Tooltip>
 
           <Button variant="secondary">Annuler</Button>
@@ -65,6 +70,24 @@ function App() {
         <Avatar name="Koloina Razafindratsira" size="sm" />
         <Avatar name="Tsiry Sandratraina" size="sm" src="lien-mort.jpg" />
       </div>
+
+      <Card className="max-w-md">
+        <Card.Header>Détails du Projet</Card.Header>
+        <Card.Body>
+          <p>
+            Voici le contenu de ma carte. On peut y mettre des composants comme
+            un Badge ou un Avatar !
+          </p>
+        </Card.Body>
+        <Card.Footer>
+          <Button variant="secondary" size="sm">
+            Annuler
+          </Button>
+          <Button variant="primary" size="sm">
+            Confirmer
+          </Button>
+        </Card.Footer>
+      </Card>
     </div>
   );
 }
