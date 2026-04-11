@@ -12,6 +12,7 @@ function App() {
 
   const [showDetails, toggleDetails] = useToggle(false);
 
+const App = () => {
   return (
     <div className="min-h-screen bg-slate-50 p-8 flex flex-col items-center gap-10">
       <h1 className="text-3xl font-bold text-slate-800">React Component Lab</h1>
